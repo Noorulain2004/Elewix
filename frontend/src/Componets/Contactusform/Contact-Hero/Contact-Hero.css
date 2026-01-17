@@ -21,3 +21,35 @@
   z-index: 6;
   white-space: nowrap;
 }
+/* ========================================= */
+/* --- MOBILE RESPONSIVE (Phone View) --- */
+/* ========================================= */
+
+@media (max-width: 900px) {
+
+    /* Common Styles for Both Texts on Mobile */
+    .text-upper-left,
+    .text-lower-right {
+        left: 50%; /* Screen ke beech mein */
+        transform: translate(-50%, -50%); /* Perfectly center align */
+        width: 100%; /* Full width taake text center ho sake */
+        text-align: center; /* Text ko center kiya */
+        right: auto; /* Purani desktop positioning reset */
+    }
+
+    /* 1. Pehla Text (Example: "Built With") - Ring ke Neeche */
+    .text-upper-left {
+        top: 62%; /* Ring ke just neeche */
+        font-size: 3.5rem; /* Font thoda chota kiya mobile ke liye */
+        margin: 0;
+    }
+
+    /* 2. Dusra Text (Example: "Elewix Agency") - Pehle text ke Neeche */
+    .text-lower-right {
+        top: 72%; /* Pehle text ke neeche */
+        font-size: 3.5rem;
+        margin: 0;
+        justify-content: center; /* Agar flex use ho raha hai to center kare */
+    }
+    
+}
