@@ -296,69 +296,74 @@
   0%, 100% { opacity: 0.8; }
   50% { opacity: 0.4; }
 }
+
 /* ========================================= */
 /* --- MOBILE RESPONSIVE (Phone View) --- */
 /* ========================================= */
 
 @media (max-width: 768px) {
 
-    /* 1. LINE ADJUSTMENT: Line ko neeche kiya taake header ke liye jagah banay */
-    .line-top {
-        top: 170px; /* Line ab neeche hai */
-    }
-
-    /* 2. META INFO: Ab ye Line ke UPAR aur Center mein hai */
-    .hero-meta {
-        top: 90px; /* Label (40px) aur Line (170px) ke beech mein */
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
+    /* 1. Label (CREATIVE AGENCY): Left Align */
+    .hero-label {
+        top: 110px; /* Line ke neeche */
+        left: 6%;   /* Left side par */
+        transform: none; /* Center alignment khatam */
+        width: auto;
+        justify-content: flex-start;
         z-index: 20;
     }
-    
-    .meta-text {
-        max-width: 90%; 
-        margin: 0 auto;
-        font-size: 0.8rem; /* Thoda saaf font */
+
+    /* 2. Meta Info (@2026...): REMOVE on Mobile */
+    .hero-meta {
+        display: none; /* Gayab */
     }
 
-    /* 3. Label (CREATIVE AGENCY): Center mein */
-    .hero-label {
-        top: 40px; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        justify-content: center;
-    }
-
-    /* 4. RING: Thoda size adjust aur position */
+    /* 3. RING: Size Bada + Effect */
     .ring-container {
-        width: 90%; 
-        top: 40%; /* Header ke baad shuru ho */
+        width: 115%; /* Screen se bahar nikalta hua bada size */
+        top: 42%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Effect: Pulse Animation (Glow kam zyada hoga) */
+        animation: pulseGlow 3s ease-in-out infinite alternate;
     }
 
-    /* 5. "Creative" TEXT: Thoda Right Shift kiya taake readable ho */
+    /* 4. Text Adjustment (Ring ke neeche) */
     .text-creative {
-        top: 60%; /* Ring ke neeche */
-        left: 52%; /* 50% ki jagah 52% kiya (Thoda Right shift) */
-        transform: translate(-50%, -50%); 
-        text-align: center;
-        width: 100%;
-        font-size: 3.2rem; /* Mobile par font manageable ho */
-        z-index: 10;
-    }
-
-    /* 6. "Digital Agency" TEXT: Creative ke neeche */
-    .text-digital-wrapper {
-        bottom: auto; 
-        top: 68%; /* Creative ke neeche gap */
-        right: auto;
+        top: 65%; /* Ring ke neeche */
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
         width: 100%;
-        font-size: 3.2rem;
+        font-size: 3.5rem;
+        z-index: 10;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.8); /* Text ke peeche shadow taake ring ke upar parha jaye */
+    }
+
+    .text-digital-wrapper {
+        top: 73%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        font-size: 3.5rem;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+    
+    /* Line ko wapis adjust kiya */
+    .line-top {
+        top: 100px;
+    }
+}
+
+/* --- NEW ANIMATION FOR RING EFFECT --- */
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 15px rgba(204, 255, 0, 0.3));
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        filter: drop-shadow(0 0 50px rgba(204, 255, 0, 0.7)); /* Tez Glow */
+        transform: translate(-50%, -50%) scale(1.05); /* Thoda sa Zoom */
     }
 }

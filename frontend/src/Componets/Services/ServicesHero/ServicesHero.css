@@ -180,13 +180,16 @@
 
     /* 6. "Our" TEXT: Ring ke Upar */
     .upper-left {
-        top: 30%; /* Ring ke upar */
+        top: 60%; /* Ring ke upar */
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
         text-align: center;
         width: 100%;
         margin: 0;
+        white-space: nowrap;
+        
+        
     }
 
     /* Agar "Digital" hollow text use kar rahe ho to wo stack ho jaye */
@@ -197,7 +200,7 @@
 
     /* 7. "Expertise" TEXT: Ring ke Neeche */
     .lower-right {
-        top: 62%; /* Ring ke neeche */
+        top: 72%; /* Ring ke neeche */
         left: 50%;
         transform: translate(-50%, -50%);
         justify-content: center;
