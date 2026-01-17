@@ -40,10 +40,16 @@ const ContactHero = () => {
                 <label>I’m interested in...</label>
                 <div className="select-wrapper">
                     <select defaultValue="" required>
-                        <option value="" disabled>Select</option>
-                        <option value="web">Web Development</option>
-                        <option value="ui">UI/UX Design</option>
-                        <option value="marketing">Digital Marketing</option>
+                        <option value="" disabled>Select Service</option>
+                        <option value="web-dev">Web Development</option>
+                        <option value="app-dev">App Development</option>
+                        <option value="ui-ux">UI/UX Design</option>
+                        <option value="social-media">Social Media Marketing</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="devops">DevOps & Cloud</option>
+                        <option value="ecommerce">E-Commerce Solutions</option>
+                        <option value="branding">Brand Identity</option>
+                        <option value="motion-graphics">Motion Graphics</option>
                     </select>
                     {/* Custom Arrow Icon */}
                     <span className="arrow-icon">▼</span>
