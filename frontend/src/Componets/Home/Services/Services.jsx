@@ -44,31 +44,31 @@ const Services = () => {
         {/* Section Heading (Optional) */}
         <h3 className="section-label">OUR EXPERTISE</h3>
 
-        <div className="services-grid">
+        <div className="ServicesGrid">
           {servicesData.map((service, index) => (
-            <div key={service.id} className={`service-row ${index % 2 === 0 ? 'row-normal' : 'row-reverse'}`}>
+            <div key={service.id} className={`ServiceRow ${index % 2 === 0 ? 'RowNormal' : 'RowReverse'}`}>
               
               {/* Text Column */}
-              <div className="service-info">
+              <div className="ServiceInfo">
                 
                 {/* Step Indicator (Square + Number) */}
-                <div className="step-indicator">
-                    <span className="neon-square"></span>
-                    <span className="step-text">Step {service.id}</span>
+                <div className="StepIndicator">
+                    <span className="NeonSquare"></span>
+                    <span className="StepText">Step {service.id}</span>
                 </div>
 
                 {/* Main Title (With Neon Highlight) */}
-                <h2 className="service-title">
-                  {service.titleStart} <span className="text-highlight">{service.titleEnd}</span>
+                <h2 className="ServiceTitle">
+                  {service.titleStart} <span className="TextHighlight">{service.titleEnd}</span>
                 </h2>
 
                 {/* Description */}
-                <p className="service-desc">{service.desc}</p>
+                <p className="ServiceDesc">{service.desc}</p>
               </div>
 
               {/* Image Column */}
-              <div className="service-image-wrapper">
-                <img src={service.img} alt={service.titleEnd} className="service-img" />
+              <div className="ServiceImageWrapper">
+                <img src={service.img} alt={service.titleEnd} className="ServiceImg" />
               </div>
 
             </div>

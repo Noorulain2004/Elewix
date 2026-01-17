@@ -15,14 +15,14 @@
     opacity: 0.8;
 }
 
-.services-grid {
+.ServicesGrid {
     display: flex;
     flex-direction: column;
     gap: 120px; /* Har service ke beech mein space */
 }
 
 /* --- THE ROW LAYOUT --- */
-.service-row {
+.ServiceRow {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,35 +30,35 @@
 }
 
 /* Alternate Layout (Zig-Zag) */
-.row-normal {
+.RowNormal {
     flex-direction: row;
 }
 
-.row-reverse {
+.RowReverse {
     flex-direction: row-reverse; /* Text Right, Image Left */
 }
 
 /* --- TEXT CONTENT --- */
-.service-info {
+.ServiceInfo {
     flex: 1; /* Aadhi screen le */
     max-width: 500px;
 }
 
 /* Step Indicator (Square + Text) */
-.step-indicator {
+.StepIndicator {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.neon-square {
+.NeonSquare {
     width: 8px;
     height: 8px;
     background-color: #ccff00;
 }
 
-.step-text {
+.StepText {
     color: #ccff00;
     font-size: 0.9rem;
     font-weight: 500;
@@ -66,7 +66,7 @@
 }
 
 /* Main Title */
-.service-title {
+.ServiceTitle {
     font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive Huge Text */
     font-weight: 600;
     line-height: 1.1;
@@ -74,13 +74,13 @@
     color: #fff;
 }
 
-.text-highlight {
+.TextHighlight {
     color: #ccff00; /* Neon Green Word */
     display: block; /* Nayi line par laye (Optional: agar same line chahiye to 'inline' karein) */
 }
 
 /* Description */
-.service-desc {
+.ServiceDesc {
     color: #999;
     font-size: 1.1rem;
     line-height: 1.6;
@@ -88,7 +88,7 @@
 }
 
 /* --- IMAGE STYLING --- */
-.service-image-wrapper {
+.ServiceImageWrapper {
     flex: 1;
     height: 400px; /* Fixed height for consistency */
     overflow: hidden;
@@ -97,7 +97,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.service-img {
+.ServiceImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -106,7 +106,7 @@
 }
 
 /* Hover Effect: Image zooms and becomes colorful */
-.service-row:hover .service-img {
+.ServiceRow:hover .ServiceImg {
     filter: grayscale(0%); /* Color wapis */
     transform: scale(1.05);
 }
