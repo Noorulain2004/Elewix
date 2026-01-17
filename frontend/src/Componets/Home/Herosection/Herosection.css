@@ -296,3 +296,62 @@
   0%, 100% { opacity: 0.8; }
   50% { opacity: 0.4; }
 }
+/* ========================================= */
+/* --- MOBILE RESPONSIVE (Phone View) --- */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. Meta Info (© 2026...): Move below the top line & Center it */
+    .hero-meta {
+        top: 130px; /* Line 110px par hai, ye uske neeche ayega */
+        right: auto; /* Right alignment khatam */
+        left: 50%;
+        transform: translateX(-50%); /* Center mein lao */
+        text-align: center;
+        width: 100%;
+        z-index: 20;
+    }
+    
+    .meta-text {
+        max-width: 100%; /* Text ko khulne do */
+        margin: 0 auto; /* Center alignment */
+    }
+
+    /* 2. Ring: Make it Bigger & Center */
+    .ring-container {
+        width: 85%; /* Ring ka size bada kiya (Pehle 38% tha) */
+        top: 40%; /* Thoda upar shift kiya taake neeche text aa sake */
+    }
+
+    /* 3. "Creative" Text: Move below the Ring */
+    .text-creative {
+        top: 62%; /* Ring ke neeche */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Perfectly center */
+        text-align: center;
+        width: 100%;
+        font-size: 3.5rem; /* Font thoda adjust kiya */
+    }
+
+    /* 4. "Digital Agency" Text: Move below "Creative" */
+    .text-digital-wrapper {
+        bottom: auto; /* Purani position reset */
+        top: 70%; /* Creative ke neeche */
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        font-size: 3.5rem;
+    }
+
+    /* Optional: Label (CREATIVE AGENCY) ko bhi adjust karein */
+    .hero-label {
+        top: 80px; /* Top line ke paas */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        justify-content: center;
+    }
+}

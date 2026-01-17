@@ -151,3 +151,55 @@
     color: #ccff00;
     padding-left: 10px; /* Thoda right shift ho */
 }
+/* ... Upper wala code same rahega ... */
+
+/* ========================================= */
+/* --- MOBILE RESPONSIVE STYLES --- */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Navbar Adjustments */
+    .navbar-container {
+        padding: 0; /* Extra padding hatayein */
+    }
+
+    /* 2. Logo Section: Extra text chupayein */
+    .divider, 
+    .tagline {
+        display: none; /* Mobile par sirf 'Elewix' dikhega */
+    }
+
+    .nav-center {
+        padding-left: 15px; /* Thoda gap kam kiya */
+        justify-content: flex-start; /* Logo left align rahe */
+    }
+
+    /* 3. Contact Button: Sirf Arrow Icon dikhayein */
+    .contact-text {
+        display: none; /* "Contact Us" text chupa diya */
+    }
+
+    .nav-right {
+        width: 70px; /* Sirf square icon jitni jagah le */
+        justify-content: center;
+    }
+
+    .contact-icon {
+        width: 100%; /* Icon full width le */
+        border-left: none; /* Line hata di kyunke text nahi hai */
+    }
+
+    /* 4. Sidebar Adjustment for Mobile */
+    .sidebar-menu {
+        width: 85%; /* Screen ka 85% hissa cover kare */
+        max-width: 320px; /* Zyada chora na ho */
+    }
+}
+
+/* Very Small Phones (e.g. iPhone SE) */
+@media screen and (max-width: 380px) {
+    .sidebar-links a {
+        font-size: 1.5rem; /* Font thoda chota */
+    }
+}

@@ -161,29 +161,33 @@
 
 /* --- Mobile Responsive --- */
 @media (max-width: 968px) {
+    
     .cta-container {
         flex-direction: column;
         text-align: left;
+        gap: 30px; /* Gap thoda kam kiya */
     }
     
+    /* YEH CHANGE KIYA HAI: Image section ko gayab kar diya */
     .cta-visual {
-        height: 400px;
-        width: 100%;
-        margin-top: -50px;
-        z-index: 0; /* Mobile par text ke peeche chala jaye */
+        display: none; /* Phone par Image Show Nahi Hogi */
     }
-    
-    .cta-ring-img {
-        width: 120%; /* Mobile par thoda chota */
-        right: -10%;
-        left: auto;
-    }
-    
-    /* Mobile par gradient ko adjust karna */
+
+    /* Gradient Glow abhi bhi rahega lekin thoda adjust kiya */
     .cta-section::before {
-        width: 90vw;
-        height: 90vw;
-        right: -20%;
-        opacity: 0.6;
+        width: 100vw;
+        height: 100vw;
+        right: -30%;
+        top: 20%; /* Thoda upar */
+        opacity: 0.5; /* Halka glow */
+    }
+
+    /* Text ko thoda adjust kiya taake khali jagah buri na lage */
+    .cta-content {
+        max-width: 100%;
+    }
+    
+    .cta-title {
+        font-size: 3rem; /* Mobile par font size normal */
     }
 }

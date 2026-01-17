@@ -54,7 +54,7 @@ const Services = () => {
                 {/* Step Indicator (Square + Number) */}
                 <div className="StepIndicator">
                     <span className="NeonSquare"></span>
-                    <span className="StepText">Step {service.id}</span>
+                    <span className="StepText">Service {service.id}</span>
                 </div>
 
                 {/* Main Title (With Neon Highlight) */}

@@ -125,11 +125,83 @@
 .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
 .scroll-dot { width: 6px; height: 6px; background-color: #ccff00; border-radius: 50%; margin-bottom: -3px; }
 
-/* Mobile Response */
+/* ========================================= */
+/* --- MOBILE RESPONSIVE (Phone View) --- */
+/* ========================================= */
+
 @media (max-width: 900px) {
-    .composition-layer { flex-direction: column; width: 100%; }
-    .hero-text { font-size: 3rem; position: relative; inset: auto; text-align: center; }
-    .text-upper-left { margin-bottom: -40px; right: auto; top: auto; }
-    .text-lower-right { margin-top: -40px; left: auto; top: auto; justify-content: center;}
-    .ring-center-piece { position: relative; width: 280px; height: 280px; transform: none; top: auto; left: auto; }
+    
+    /* 1. Meta Info Adjustment (Center below top line) */
+    .hero-meta {
+        top: 130px; /* Line ke neeche */
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .meta-text {
+        margin: 0 auto;
+    }
+
+    /* 2. Composition Layer Full Screen */
+    .composition-layer {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    /* 3. Text Reset & Centering */
+    .hero-text {
+        font-size: 4rem; /* Mobile font size */
+        white-space: nowrap;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- "Our" Text Position --- */
+    .upper-left {
+        top: 35%; /* Ring ke thoda upar */
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+
+    /* --- Ring Position (Big & Center) --- */
+    .ring-center-piece {
+        width: 320px; /* Mobile par ring size */
+        height: 320px;
+        top: 50%;
+        left: 50%;
+        /* Previous -55% ko fix karke perfect center kiya */
+        transform: translate(-50%, -50%); 
+    }
+
+    /* --- "Expertise" Text Position --- */
+    .lower-right {
+        top: 65%; /* Ring ke neeche */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+    }
+
+    /* Dot Size Correction for Mobile */
+    .dot-accent {
+        font-size: 5rem; /* Desktop jitna bada na ho */
+    }
+    
+    /* Decoration Line Reset */
+    .deco-line {
+        margin: 10px auto 0 auto; /* Center alignment */
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 400px) {
+    .hero-text { font-size: 3rem; }
+    .ring-center-piece { width: 260px; height: 260px; }
 }
