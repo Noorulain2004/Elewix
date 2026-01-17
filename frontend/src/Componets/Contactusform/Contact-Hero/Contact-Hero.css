@@ -49,7 +49,8 @@
         top: 72%; /* Pehle text ke neeche */
         font-size: 3.5rem;
         margin: 0;
-        justify-content: center; /* Agar flex use ho raha hai to center kare */
+        justify-content: center;
+        
     }
     
 }
