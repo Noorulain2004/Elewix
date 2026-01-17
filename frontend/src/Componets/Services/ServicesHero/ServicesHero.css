@@ -133,81 +133,92 @@
 /* --- MOBILE RESPONSIVE (Phone View) --- */
 /* ========================================= */
 
+/* ========================================= */
+/* --- MOBILE RESPONSIVE (Phone View) --- */
+/* ========================================= */
+
 @media (max-width: 900px) {
 
-    /* 1. Header Cleanup (Top space kam kiya) */
+    /* ... Header & Ring styles same as before ... */
     .hero-label {
-        top: 100px; /* Line ke pass */
-        left: 6%;   /* Left align for professional look */
+        top: 100px;
+        left: 6%;
         transform: none;
         width: auto;
         justify-content: flex-start;
         z-index: 20;
     }
 
-    /* Meta Info ko hata diya taake ring ke liye jagah banay */
-    .hero-meta {
-        display: none; 
-    }
+    .hero-meta { display: none; }
+    .line-overlay.top { top: 120px; }
 
-    .line-overlay.top {
-        top: 90px;
-    }
-
-    /* 2. RING: Huge Size + Glow Effect */
+    /* RING: Huge Size + Glow Effect */
     .ring-center-piece {
-        width: 115%; /* Screen se bada */
-        height: auto; /* Aspect ratio maintain rahe */
+        width: 115%;
+        height: auto;
         aspect-ratio: 1/1;
         top: 42%; 
         left: 50%;
         transform: translate(-50%, -50%);
-        /* Wahi Glow Animation jo Home main thi */
         animation: pulseGlow 3s ease-in-out infinite alternate;
     }
+    
+    .ring-backdropp-glow { width: 150%; opacity: 0.8; }
 
-    .ring-backdropp-glow {
-        width: 150%; /* Glow area aur bada */
-        opacity: 0.8;
-    }
+    /* --- TEXT ANIMATION SECTION --- */
 
-    /* 3. "Our Digital" TEXT (Ab ek line mein ayega) */
+    /* 1. "Our Digital" TEXT */
     .upper-left {
-        top: 65%; /* Ring ke neeche */
+        top: 68%;
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
         text-align: center;
+        font-size: 3.5rem;
         width: 100%;
         margin: 0;
-        white-space: nowrap; /* Zaroori: Line break rokne ke liye */
+        white-space: nowrap;
         z-index: 10;
-        text-shadow: 0 10px 30px rgba(0,0,0,0.9); /* Shadow taake readable ho */
+        text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+        /* NEW: Text Animation added */
+        animation: floatText 3s ease-in-out infinite alternate; 
     }
 
-    /* YEH CHANGE KIYA: Block hata diya taake same line par aaye */
-    .hollow-text {
-        display: inline; 
-        margin-left: 10px; /* Thoda gap */
-    }
+    .hollow-text { display: inline; margin-left: 10px; }
 
-    /* 4. "Expertise" TEXT */
+    /* 2. "Expertise" TEXT */
     .lower-right {
-        top: 73%; /* Our Digital ke neeche */
+        top: 80%;
         left: 50%;
+        font-size: 3.5rem;
         transform: translate(-50%, -50%);
         justify-content: center;
         width: 100%;
         text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+        /* NEW: Text Animation added (Thoda delay taake alag hile) */
+        animation: floatText 3s ease-in-out infinite alternate-reverse; 
     }
 
-    /* Font Size Adjustment */
-    .hero-text {
-        font-size: 3.2rem; 
+    /* 3. SCROLL DOWN GRADIENT */
+    .scroll-text {
+        font-weight: 700; /* Thoda mota taake gradient dikhe */
+        letter-spacing: 2px;
+        /* Neon Gradient Magic */
+        background: linear-gradient(to bottom, #ffffff 0%, #ccff00 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 1; /* Opacity full rakhi taake gradient chamke */
+    }
+    
+    /* Scroll Line ko bhi Neon Green kar diya */
+    .scroll-line {
+        background: linear-gradient(to bottom, transparent, #ccff00);
     }
 }
 
-/* --- ANIMATION (Agar file main pehle se nahi hai to add karein) --- */
+/* --- ANIMATIONS DEFINITIONS --- */
+
+/* Ring Glow Animation */
 @keyframes pulseGlow {
     0% {
         filter: drop-shadow(0 0 15px rgba(204, 255, 0, 0.3));
@@ -216,5 +227,15 @@
     100% {
         filter: drop-shadow(0 0 50px rgba(204, 255, 0, 0.6)); 
         transform: translate(-50%, -50%) scale(1.05); 
+    }
+}
+
+/* New Text Float Animation */
+@keyframes floatText {
+    0% {
+        transform: translate(-50%, -50%) translateY(0px); /* Start position */
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-10px); /* Thoda upar float kare */
     }
 }
