@@ -129,99 +129,92 @@
 /* --- MOBILE RESPONSIVE (Phone View) --- */
 /* ========================================= */
 
-@media (max-width: 900px) {
-    
-    /* 1. LINE ADJUSTMENT: Line ko neeche kiya taake header ke liye jagah banay */
-    .line-overlay.top {
-        top: 170px; /* Line ab neeche hai */
-    }
+/* ========================================= */
+/* --- MOBILE RESPONSIVE (Phone View) --- */
+/* ========================================= */
 
-    /* 2. META INFO: Ab ye Line ke UPAR aur Center mein hai */
-    .hero-meta {
-        top: 90px; /* Label aur Line ke beech mein */
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
+@media (max-width: 900px) {
+
+    /* 1. Header Cleanup (Top space kam kiya) */
+    .hero-label {
+        top: 100px; /* Line ke pass */
+        left: 6%;   /* Left align for professional look */
+        transform: none;
+        width: auto;
+        justify-content: flex-start;
         z-index: 20;
     }
-    
-    .meta-text {
-        max-width: 90%; 
-        margin: 0 auto;
-        font-size: 0.8rem;
+
+    /* Meta Info ko hata diya taake ring ke liye jagah banay */
+    .hero-meta {
+        display: none; 
     }
 
-    /* 3. Label (OUR DOMAIN / WHAT WE DO): Center mein */
-    .hero-label {
-        top: 40px; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        justify-content: center;
+    .line-overlay.top {
+        top: 90px;
     }
 
-    /* 4. COMPOSITION LAYER: Reset */
-    .composition-layer {
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-    }
-
-    /* 5. RING: Size adjust aur Center Position */
+    /* 2. RING: Huge Size + Glow Effect */
     .ring-center-piece {
-        width: 350px; /* Mobile par munasib size */
-        height: 350px;
-        top: 45%; /* Thoda upar shift kiya */
+        width: 115%; /* Screen se bada */
+        height: auto; /* Aspect ratio maintain rahe */
+        aspect-ratio: 1/1;
+        top: 42%; 
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -50%);
+        /* Wahi Glow Animation jo Home main thi */
+        animation: pulseGlow 3s ease-in-out infinite alternate;
     }
 
-    /* 6. "Our" TEXT: Ring ke Upar */
+    .ring-backdropp-glow {
+        width: 150%; /* Glow area aur bada */
+        opacity: 0.8;
+    }
+
+    /* 3. "Our Digital" TEXT (Ab ek line mein ayega) */
     .upper-left {
-        top: 60%; /* Ring ke upar */
+        top: 65%; /* Ring ke neeche */
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
         text-align: center;
         width: 100%;
         margin: 0;
-        white-space: nowrap;
-        
-        
+        white-space: nowrap; /* Zaroori: Line break rokne ke liye */
+        z-index: 10;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.9); /* Shadow taake readable ho */
     }
 
-    /* Agar "Digital" hollow text use kar rahe ho to wo stack ho jaye */
+    /* YEH CHANGE KIYA: Block hata diya taake same line par aaye */
     .hollow-text {
-        display: block; 
-        margin-left: 0;
+        display: inline; 
+        margin-left: 10px; /* Thoda gap */
     }
 
-    /* 7. "Expertise" TEXT: Ring ke Neeche */
+    /* 4. "Expertise" TEXT */
     .lower-right {
-        top: 72%; /* Ring ke neeche */
+        top: 73%; /* Our Digital ke neeche */
         left: 50%;
         transform: translate(-50%, -50%);
         justify-content: center;
         width: 100%;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.9);
     }
 
-    /* Common Text Sizing */
+    /* Font Size Adjustment */
     .hero-text {
-        font-size: 3.5rem; /* Mobile Readable Size */
-        white-space: nowrap;
-        position: absolute;
-    }
-
-    /* Dot adjust */
-    .dot-accent {
-        font-size: 4rem;
+        font-size: 3.2rem; 
     }
 }
 
-/* Extra Small Phones */
-@media (max-width: 400px) {
-    .hero-text { font-size: 2.8rem; }
-    .ring-center-piece { width: 250px; height: 250px; }
+/* --- ANIMATION (Agar file main pehle se nahi hai to add karein) --- */
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 15px rgba(204, 255, 0, 0.3));
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        filter: drop-shadow(0 0 50px rgba(204, 255, 0, 0.6)); 
+        transform: translate(-50%, -50%) scale(1.05); 
+    }
 }
