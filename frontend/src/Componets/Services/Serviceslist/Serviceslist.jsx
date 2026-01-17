@@ -37,6 +37,25 @@ const servicesData = [
     title: "DevOps & Cloud",
     description: "Cloud infrastructure setup (AWS/Azure), CI/CD pipelines, and server automation for scaling.",
     tags: ["Docker", "Kubernetes", "AWS"]
+  },
+  // --- NEW ADDITIONS ---
+  {
+    id: "07",
+    title: "E-Commerce Solutions",
+    description: "Custom online stores with secure payment gateways and inventory management to boost your sales.",
+    tags: ["Shopify", "WooCommerce", "Stripe"]
+  },
+  {
+    id: "08",
+    title: "Brand Identity",
+    description: "Crafting unique visual identities including logos, color palettes, and guidelines that resonate with your audience.",
+    tags: ["Logo Design", "Typography", "Strategy"]
+  },
+  {
+    id: "09",
+    title: "Motion Graphics",
+    description: "Engaging video content, animations, and visual effects to elevate your brand's storytelling on digital platforms.",
+    tags: ["After Effects", "Premiere Pro", "3D"]
   }
 ];
 

@@ -15,24 +15,26 @@ const ServicesHero = () => {
       {/* === HERO COMPOSITION === */}
       <div className="composition-layer">
         
-          {/* 1. Top Left Text: "Our" */}
-          <h1 className="hero-text upper-left">
-            Our
-          </h1>
+    {/* 1. Top Left Text */}
+    <h1 className="hero-text upper-left">
+      Our 
+      {/* New Word Added Here */}
+      <span className="hollow-text"> Digital</span>
+    </h1>
 
-          {/* 2. Center Ring */}
-          <div className="ring-center-piece">
-             <div className="ring-backdropp-glow"></div>
-             <img src={heroRingImg} alt="Abstract Ring" className="the-ring" />
-          </div>
+    {/* 2. Center Ring */}
+    <div className="ring-center-piece">
+        <div className="ring-backdrop-glow"></div>
+        <img src={heroRingImg} alt="Abstract Ring" className="the-ring" />
+    </div>
 
-          {/* 3. Bottom Right Text: "Expertise" */}
-          <h1 className="hero-text lower-right">
-            <span className="neon-pop">Expertise</span>
-            <span className="dot-accent">.</span>
-          </h1>
+    {/* 3. Bottom Right Text */}
+    <h1 className="hero-text lower-right">
+      <span className="neon-pop">Expertise</span>
+      <span className="dot-accent">.</span>
+    </h1>
 
-      </div>
+</div>
 
       {/* === LABEL === */}
       <div className="hero-label position-relative">

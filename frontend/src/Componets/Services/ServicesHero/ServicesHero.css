@@ -51,13 +51,13 @@
     font-weight: 200; /* Thin White */
     color: #ffffff;
     right: 75%; /* Ring se door */
-    top: 50%; 
+    top: 48%; 
     letter-spacing: -2px;
 }
 
 /* 2. Right: "Expertise" */
 .lower-right {
-    left: 35%; /* Ring ke right side par */
+    left: 38%; /* Ring ke right side par */
     top: 68%;
     display: flex; align-items: baseline;
 }
