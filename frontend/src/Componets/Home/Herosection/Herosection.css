@@ -305,7 +305,7 @@
 
     /* 1. Label (CREATIVE AGENCY): Left Align */
     .hero-label {
-        top: 80px; /* Line ke neeche */
+        top: 75px; /* Line ke neeche */
         left: 6%;   /* Left side par */
         transform: none; /* Center alignment khatam */
         width: auto;

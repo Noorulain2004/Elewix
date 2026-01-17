@@ -39,7 +39,7 @@
 
     /* 1. Pehla Text (Example: "Built With") - Ring ke Neeche */
     .text-upper-left {
-        top: 100%; /* Ring ke just neeche */
+        top: 105%; /* Ring ke just neeche */
         font-size: 3.5rem; /* Font thoda chota kiya mobile ke liye */
         margin: 0;
     }
