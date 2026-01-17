@@ -1,0 +1,122 @@
+/* src/components/Testimonials.css */
+
+.testimonials-section {
+    background-color: #050505;
+    padding: 100px 0; /* Top bottom padding */
+    overflow: hidden; /* Screen se bahar jane wali cheez chupaye */
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/* Header Styling */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.green-square { width: 8px; height: 8px; background-color: #ccff00; }
+.section-title { font-size: 0.8rem; letter-spacing: 2px; color: #fff; opacity: 0.8; }
+
+/* --- MARQUEE CONTAINER --- */
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Side mein thoda fade effect dene ke liye (Optional) */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px; /* Cards ke darmiyan fasla */
+    width: max-content; /* Content jitna lamba ho */
+    
+    /* Animation settings */
+    animation: scroll 30s linear infinite; 
+}
+
+/* Hover karne par ruk jaye */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* --- THE CARD STYLING --- */
+.testimonial-card {
+    background-color: #111; /* Dark Grey Card */
+    width: 400px; /* Card ki chourai */
+    padding: 40px;
+    border-radius: 4px; /* Sharp corners like design */
+    flex-shrink: 0; /* Size shrink na ho */
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: #333;
+    transform: translateY(-5px); /* Thoda upar uthay */
+}
+
+/* Card Content */
+.card-headline {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card-quote {
+    color: #999;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Footer (Avatar + Name) */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #333;
+}
+
+.user-name {
+    color: #ccff00; /* Neon Name */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.user-role {
+    color: #666;
+    font-size: 0.85rem;
+    display: block;
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* -50% isliye kyun ke humne list ko double (2x) kiya hai */
+        transform: translateX(-50%); 
+    }
+}

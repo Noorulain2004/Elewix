@@ -1,0 +1,189 @@
+/* src/components/ContactCTA.css */
+
+/* --- 1. Main Section & Background Gradient --- */
+.cta-section {
+    background-color: #050505;
+    padding: 120px 0; /* Thodi zyada padding */
+    width: 100%;
+    /* Zaroori: Image ko screen se bahar nikalne ke liye */
+    overflow: hidden; 
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+/* YEH HAI WO GRADIENT GLOW JO AAPNE MANGA THA */
+/* Yeh image ke peeche ek badi si green roshni banayega */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%; /* Screen ke right side par */
+    transform: translateY(-50%);
+    width: 60vw; /* Screen ka 60% chora */
+    height: 60vw; /* Golai mein */
+    background: radial-gradient(
+        circle,
+        rgba(204, 255, 0, 0.3) 0%, /* Center mein Neon Green glow */
+        rgba(204, 255, 0, 0.05) 40%,
+        transparent 70%
+    );
+    filter: blur(80px); /* Bohot zyada dhundla taake soft light lage */
+    z-index: 0; /* Sabse peeche */
+    pointer-events: none;
+}
+
+.cta-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+    z-index: 1; /* Content glow ke upar rahe */
+}
+
+/* --- 2. Left Content Styling --- */
+.cta-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Label */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.green-square {
+    width: 8px;
+    height: 8px;
+    background-color: #ccff00; /* Neon Green */
+}
+
+/* Huge Headline */
+.cta-title {
+    font-size: clamp(3.5rem, 7vw, 6rem); /* Bohot bada text */
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.highlight-text {
+    color: #ccff00; /* Neon Green Text */
+    display: block; /* Nayi line par ensure karne ke liye */
+}
+
+/* Description */
+.cta-desc {
+    font-size: 1.1rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 480px;
+}
+
+/* --- 3. The Custom Button (Black Text on Green) --- */
+.cta-button {
+    display: flex;
+    align-items: stretch;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(204, 255, 0, 0.5); /* Green shadow on hover */
+}
+
+/* Text part */
+.btn-text {
+    background-color: #ccff00; /* Neon background */
+    color: #000; /* Black text */
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Icon part (Arrow box) */
+.btn-icon {
+    background-color: #ccff00; /* Same neon background */
+    color: #000;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Thoda sa dark border separation ke liye */
+    border-left: 2px solid rgba(0,0,0,0.1); 
+}
+
+
+/* --- 4. Right Visual (The Zoomed & Cropped Ring) --- */
+.cta-visual {
+    flex: 1;
+    height: 600px; /* Fixed height area */
+    position: relative;
+    /* Zaroori nahi ke hum yahan mask use karein agar hum overflow hidden use kar rahe hain parent pe */
+}
+
+.visual-crop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cta-ring-img {
+    /* Image ko bohot bada karna taake zoomed in lage */
+    width: 180%; 
+    max-width: none;
+    position: absolute;
+    /* Image ko right side par dhakelna taake wo kat jaye */
+    right: -50%; 
+    top: 50%;
+    transform: translateY(-50%);
+    /* Ensure karein image stretch na ho */
+    object-fit: contain; 
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 968px) {
+    .cta-container {
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .cta-visual {
+        height: 400px;
+        width: 100%;
+        margin-top: -50px;
+        z-index: 0; /* Mobile par text ke peeche chala jaye */
+    }
+    
+    .cta-ring-img {
+        width: 120%; /* Mobile par thoda chota */
+        right: -10%;
+        left: auto;
+    }
+    
+    /* Mobile par gradient ko adjust karna */
+    .cta-section::before {
+        width: 90vw;
+        height: 90vw;
+        right: -20%;
+        opacity: 0.6;
+    }
+}

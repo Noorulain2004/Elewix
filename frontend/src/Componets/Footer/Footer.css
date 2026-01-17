@@ -1,0 +1,38 @@
+/* src/components/Footer.css */
+
+.footer-container {
+    background-color: #050505; /* Matches the site background */
+    width: 100%;
+    padding: 30px 0; /* Vertical padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separation line */
+    display: flex;
+    justify-content: flex-start; /* Aligns text to the left like the image */
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-text {
+    color: #888; /* Grey text color */
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.brand-name {
+    color: #fff; /* White color for the brand name */
+    font-weight: 600;
+}
+
+/* Optional: Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        justify-content: center; /* Center text on mobile */
+        text-align: center;
+    }
+}

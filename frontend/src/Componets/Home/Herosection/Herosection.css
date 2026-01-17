@@ -1,0 +1,298 @@
+/* src/components/Herosection.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap');
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-color: #050505;
+  /* Font Family Change Kiya */
+  font-family: 'Outfit', sans-serif; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-top {
+  position: absolute;
+  top: 110px; 
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08); 
+  z-index: 1;
+}
+.line-bottom {
+  position: absolute;
+  bottom: 80px; 
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+  z-index: 1;
+}
+.ring-container {
+    position: absolute;
+    /* Ring ko screen ke center se thoda upar rakha taake neeche text ke liye jagah banay */
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Content iske upar ayega */
+    width: 38%; 
+    max-width: 480px;
+    min-width: 300px;
+    pointer-events: none;
+}
+
+.floating-ring {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: floatUpDown 5s ease-in-out infinite alternate;
+}
+.ring-glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(204, 255, 0, 0.2) 0%, transparent 65%);
+    filter: blur(60px);
+}
+@keyframes floatUpDown {
+    0% { transform: translateY(-15px); }
+    100% { transform: translateY(15px); }
+}
+/* --- TEXT STYLING --- */
+.text-creative {
+  position: absolute;
+  top: 42%; /* Center se thoda upar */
+  left: 4%;
+  transform: translateY(-50%);
+  z-index: 6; /* Ring ke upar */
+  
+  font-size: clamp(3.5rem, 10vw, 8.5rem);
+  color: #fff;
+  font-weight: 300; /* Thin look */
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1;
+}
+
+.text-digital-wrapper {
+  position: absolute;
+  bottom: 20%; /* Center se thoda neeche */
+  right: 4%;
+  z-index: 6;
+  text-align: right;
+  
+  font-size: clamp(3.5rem, 10vw, 8.5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1;
+}
+
+.text-green { color: #ccff00; margin-right: 0.2em; }
+.text-white { color: #fff; }
+
+/* =========================================
+   3. META INFO (Top Section)
+========================================= */
+.hero-label {
+  position: absolute;
+  top: 40px; 
+  left: 5%;
+  color: #888;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.green-square { width: 6px; height: 6px; background-color: #ccff00; }
+
+.hero-meta {
+  position: absolute;
+  top: 40px; 
+  right: 5%;
+  text-align: left;
+  z-index: 10;
+}
+.copyright { 
+    color: #ccff00; 
+    font-weight: 500; 
+    font-size: 1rem; 
+    margin-bottom: 5px; 
+    display: block; 
+}
+.meta-text { font-size: 0.75rem; color: #666; line-height: 1.4; max-width: 220px; }
+/* =========================================
+   4. BOTTOM FOOTER (Scroll & Box)
+========================================= */
+.scroll-wrapper {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  /* Isay relative rakhna zaroori hai taake dot iske andar move kare */
+  position: absolute; 
+}
+.scroll-line {
+  width: 1px;
+  height: 60px; /* Line ki lambai */
+  background: rgba(255, 255, 255, 0.1); /* Halka track */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.scroll-dot {
+  /* Position Absolute taake hum isay line ke upar chala sakein */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 6px;
+  height: 6px;
+  background-color: #ccff00; /* Neon Green */
+  border-radius: 50%;
+  z-index: 2;
+  
+  /* Animation: 2 second mein neeche jayega aur repeat hoga */
+  animation: dropDown 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+.scroll-text {
+  font-size: 0.7rem;
+  color: #ccff00;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.8;
+  animation: fadeText 2s infinite;
+}
+
+/* --- NEW TEMPLATES BOX --- */
+.new-templates-box {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #222;
+    background: #000;
+    z-index: 20;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.new-templates-box:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+.template-img-holder {
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    position: relative;
+}
+
+.template-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.box-label {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+/* 1. BOTTOM HALF-MOON GLOW */
+.bottom-moon-glow {
+    position: absolute;
+    bottom: -10%; /* Screen se thoda neeche start ho */
+    left: 50%;
+    transform: translateX(-50%); /* Center mein */
+    width: 120%; /* Screen se zyada chora taake curve smooth lage */
+    height: 45vh; /* Screen ki height ka almost aadha */
+    z-index: 0; /* Sabse peeche (lines se bhi peeche) */
+
+    /* The Magic Gradient: Center bottom se upar ki taraf */
+    background: radial-gradient(
+        ellipse at center bottom,
+        rgba(204, 255, 0, 0.25) 0%, /* Neon Green (Halka sa) */
+        rgba(0, 0, 0, 0) 70% /* Transparent Black */
+    );
+    pointer-events: none; /* Click rokne ke liye */
+    filter: blur(10px); /* Thoda dhundla kiya */
+}
+
+
+/* 2. RING GLOW EFFECT */
+/* Yeh .ring-container ke andar hoga, isliye uske sath move karega */
+.ring-glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%; /* Ring se thoda bada */
+    height: 130%;
+    z-index: -1; /* Image ke peeche */
+
+    /* Radial gradient jo center se bahar phele */
+    background: radial-gradient(
+        circle,
+        rgba(204, 255, 0, 0.4) 0%, /* Center mein bright */
+        rgba(204, 255, 0, 0.1) 50%, /* Beech mein halka */
+        transparent 70% /* Kinaron par gayab */
+    );
+    filter: blur(40px); /* Bohot zyada blur taake soft light lage */
+    pointer-events: none;
+}
+
+/* --- Z-INDEX ADJUSTMENT (Zaroori Hai) --- */
+/* Ensure karein ke lines glow ke upar hon */
+.line-top, .line-bottom {
+    z-index: 1;
+}
+/* Ensure karein ke ring glow lines ke upar ho */
+.ring-container {
+    z-index: 5;
+}
+@keyframes dropDown {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 55px; /* Line ki height ke barabar neeche jaye */
+    opacity: 0;
+  }
+}
+
+/* Text halka sa blink karega */
+@keyframes fadeText {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}

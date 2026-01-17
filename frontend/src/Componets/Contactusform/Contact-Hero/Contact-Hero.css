@@ -1,0 +1,23 @@
+/* ================================
+   CONTACT HERO – TEXT POSITIONING
+================================ */
+
+/* Top Left Text: "Built With" */
+.text-upper-left {
+  position: absolute;
+  top: 50%;
+  left: -85%;
+  transform: translateY(-50%);
+  z-index: 6;
+}
+
+
+/* Bottom Right Text: "Elewix Agency" */
+.text-lower-right {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  text-align: right;
+  z-index: 6;
+  white-space: nowrap;
+}

@@ -1,0 +1,153 @@
+/* --- Navbar Container (Same as before) --- */
+.navbar-container {
+  display: flex;
+  width: 100%;
+  height: 70px; 
+  font-family: 'Outfit', sans-serif;
+  position: relative; 
+  z-index: 100;
+  background-color: #050505; /* Ensure background is black */
+}
+
+/* --- Left Section (Hamburger) --- */
+.nav-left {
+  background-color: #ccff00; 
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.nav-left:hover {
+    background-color: #bce600;
+}
+
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+/* --- Center Section --- */
+.nav-center {
+  background-color: #050505; 
+  flex-grow: 1; 
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  color: white;
+}
+.logo-text { font-weight: bold; font-size: 1.2rem; margin-right: 15px; display: flex; align-items: center; gap: 8px;}
+.divider { color: #555; margin-right: 15px;}
+.tagline { color: #888; font-size: 0.9rem;}
+
+/* --- Right Section --- */
+.nav-right {
+  display: flex;
+  height: 100%;
+  background-color: #ccff00;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.nav-right:hover { background-color: #bce600; }
+.contact-text { height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 100px; color: black; font-weight: 600; font-size: 1rem;}
+.contact-icon { height: 100%; width: 70px; display: flex; align-items: center; justify-content: center; color: black; font-size: 1.2rem; border-left: 1px solid rgba(0, 0, 0, 0.15); }
+
+/* ========================================= */
+/* --- NEW: SIDEBAR DRAWER STYLES --- */
+/* ========================================= */
+
+/* 1. The Backdrop (Black overlay behind menu) */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    backdrop-filter: blur(3px); /* Thoda blur effect peeche */
+    z-index: 900; /* Sidebar se neeche, Navbar se upar */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 2. The Sidebar Itself */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px; /* Width of the menu */
+    height: 100vh;
+    background-color: #0a0a0a; /* Slightly lighter black for contrast */
+    border-right: 1px solid #222;
+    z-index: 1000; /* Sabse upar */
+    transform: translateX(-100%); /* Screen ke bahar chupa hua */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth Slide */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu.open {
+    transform: translateX(0); /* Slide in */
+}
+
+/* Sidebar Header (Close Button Area) */
+.sidebar-header {
+    height: 70px;
+    display: flex;
+    justify-content: flex-end; /* Button right side pe */
+    align-items: flex-start;
+}
+
+.close-btn {
+    width: 70px;
+    height: 70px;
+    background-color: #ccff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    color: black;
+}
+
+/* Menu Links styling */
+.sidebar-links {
+    list-style: none;
+    padding: 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Hover Effect */
+.sidebar-links a:hover {
+    color: #ccff00;
+    padding-left: 10px; /* Thoda right shift ho */
+}
