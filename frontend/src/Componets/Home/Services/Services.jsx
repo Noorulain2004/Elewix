@@ -1,8 +1,8 @@
 // src/components/Services.jsx
 import React from 'react';
 import './Services.css';
-import webdeveoplement from '../../../assets/Services/WebDevelopment.jpg';
-import seo from '../../../assets/Services/SEO.jpg';
+import webdeveoplement from '../../../assets/Services/webdevelopment.jpg';
+import seo from '../../../assets/Services/Seo.jpg';
 import softImg from '../../../assets/Services/Software.jpg';
 
 const servicesData = [
