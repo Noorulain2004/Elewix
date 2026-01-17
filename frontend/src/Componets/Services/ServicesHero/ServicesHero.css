@@ -141,7 +141,7 @@
 
     /* ... Header & Ring styles same as before ... */
     .hero-label {
-        top: 100px;
+        top: 80px;
         left: 6%;
         transform: none;
         width: auto;
@@ -169,7 +169,7 @@
 
     /* 1. "Our Digital" TEXT */
     .upper-left {
-        top: 68%;
+        top: 73%;
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
@@ -188,7 +188,7 @@
 
     /* 2. "Expertise" TEXT */
     .lower-right {
-        top: 80%;
+        top: 82%;
         left: 50%;
         font-size: 3.5rem;
         transform: translate(-50%, -50%);
@@ -205,7 +205,7 @@
         letter-spacing: 2px;
         /* Neon Gradient Magic */
         background: linear-gradient(to bottom, #ffffff 0%, #ccff00 100%);
-        -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         opacity: 1; /* Opacity full rakhi taake gradient chamke */
     }
