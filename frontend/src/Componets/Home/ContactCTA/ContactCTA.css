@@ -277,24 +277,43 @@
     display: inline-block; /* Changed from block to let it flow naturally if needed */
 }
 
-/* --- Mobile Fix --- */
 @media (max-width: 968px) {
-    .cta-visual {
-        height: 300px;
-        display: block; /* Show on mobile but adjust */
-        margin-top: 40px;
-    }
     
-    .cta-ring-img {
-        width: 100%;
-        right: -20%;
-        top: 0;
-        transform: none;
+    .cta-section {
+        padding: 80px 0; /* Padding thodi kam ki */
     }
 
-    .cta-visual::before {
-        width: 300px;
-        height: 300px;
-        left: 80%;
+    /* IMAGE KO HIDE KAR DIYA */
+    .cta-visual {
+        display: none !important; 
+    }
+
+    .cta-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .cta-content {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .cta-title {
+        font-size: 2.8rem; /* Mobile friendly size */
+        line-height: 1.2;
+    }
+
+    /* Glow ko mobile par center/right par adjust kiya */
+    .cta-section::before {
+        width: 80vw;
+        height: 80vw;
+        right: -20%;
+        top: 30%;
+        opacity: 0.6;
+    }
+
+    .cta-desc {
+        font-size: 1rem;
+        margin-bottom: 40px;
     }
 }

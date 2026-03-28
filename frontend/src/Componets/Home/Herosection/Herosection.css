@@ -172,27 +172,47 @@
     right: 4%;
   }
 }
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.8rem; /* Mobile ke liye perfect size */
+        font-weight: 500; /* Mobile par thoda bold text behtar lagta hai */
+        line-height: 1.2;
+    }
 
+    .form-group input, 
+    .form-group textarea {
+        border-bottom: 2px solid #444; /* Underline thodi moti kar di */
+        font-size: 1.1rem;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+        color: #ccff00; /* Labels ko neon color de diya taake background se alag dikhein */
+    }
+}
 /* --- UPDATED MOBILE (600px and below) --- */
 @media (max-width: 600px) {
   
-  .hero-container {
-    height: 100vh;
-    /* BACKGROUND ZOOM & CENTER FIX:
-       Scale(1.8) makes the mountains larger.
-       background-position: center 80% pushes them higher up. */
-    background-size: 280% auto; 
-    background-position: center 50%; 
-    background-color: #000;
-  }
+  .contact-hero-container {
+        /* Background image ko mobile par zyada clear dikhane ke liye */
+        background-image: 
+            linear-gradient(rgba(5, 5, 5, 0.5), rgba(5, 5, 5, 0.5)), /* Halka dark overlay taake lines contrast karein */
+            url('../../../assets/herosections.png'); /* Aapki background image ka path */
+        
+        background-size: cover;
+        background-position: center;
+        
+        /* MAGIC PART: Isse background ki lines bright ho jayengi */
+        filter: contrast(1.5) brightness(1.2); 
+    }
 
-  .hero-content {
-    /* Text ko mountains ke sath balance karne ke liye */
-    margin-top: -5vh; 
-    z-index: 20;
-    width: 100%;
-    padding: 0 15px;
-  }
+    /* Agar background lines alag div mein hain toh ye bold karega */
+    .background-lines-svg {
+        stroke: #ccff00; /* Neon color lines ke liye */
+        stroke-width: 2px; /* Lines ki thickness barha di */
+        opacity: 0.4 !important; /* Opacity 0.1 se barha kar 0.4 kar di taake nazar aaye */
+        filter: drop-shadow(0 0 5px rgba(204, 255, 0, 0.3)); /* Halka sa neon glow */
+    }
 
   .hero-title {
     /* TEXT INCREASE: 

@@ -1,22 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
+
 .about-section {
   width: 100%;
   background-color: #050505;
   position: relative;
   overflow: hidden;
+  font-family: 'Outfit', sans-serif; /* Global font fix */
 }
 
 .about-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 120px 5%;
-  position: relative;
 }
 
-/* TOP LEFT LABEL (Added to match your image) */
 .about-top-label {
-  position: absolute;
-  top: 60px;
-  left: 5%;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -24,6 +22,7 @@
   font-size: 0.75rem;
   letter-spacing: 4px;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .about-top-label .square {
@@ -37,127 +36,108 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: center;
-  margin-top: 40px; /* Space for the label */
 }
 
-/* Heading Visibility Fix */
+/* --- TYPOGRAPHY --- */
 .about-heading {
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
-  color: #ffffff; /* Forced white for visibility */
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #ffffff;
   font-weight: 300;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+}
+
+.line-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-text {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Intersection Observer Class */
+.active .reveal-text {
+  transform: translateY(0);
 }
 
 .highlight {
   color: #ccff00;
   font-style: italic;
+  font-weight: 400;
 }
 
-/* ANIMATION FIX: Ensuring they actually show up */
-.reveal-text {
-  display: block;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: revealUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
-}
-
-@keyframes revealUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
-
-/* Right Side Styling */
+/* Right Side Content */
 .about-text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #a0a0a0;
   line-height: 1.7;
   margin-bottom: 40px;
+  font-weight: 300;
 }
 
 .about-stats {
   display: flex;
-  gap: 50px;
+  gap: 60px;
   margin-bottom: 50px;
 }
 
 .stat-number {
   display: block;
-  font-size: 3rem;
-  color: #ccff00;
+  font-size: 3.5rem;
+  color: #fff; /* White for numbers looks more premium */
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+}
+
+/* --- BUTTON & LINK --- */
+.about-btn-link {
+  text-decoration: none;
 }
 
 .about-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
-  padding: 15px 35px;
+  padding: 18px 45px;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
 }
 
 .about-btn:hover {
+  background-color: #ccff00;
+  color: #000;
   border-color: #ccff00;
-  color: #ccff00;
-}
-/* --- TYPO ANIMATION (Only Change Here) --- */
-
-/* Parent needs to be a mask */
-.about-left div {
-  overflow: hidden; 
-  display: block;
-  line-height: 1.2;
 }
 
-.reveal-text {
-  display: block;
-  transform: translateY(110%); /* Start completely below the line */
-  opacity: 1; /* Keep at 1 so only the 'slide' shows the text */
-  animation: typoReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform;
+.btn-arrow {
+  font-size: 1.2rem;
 }
 
-@keyframes typoReveal {
-  0% {
-    transform: translateY(110%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
+/* Animation Delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
 
-/* Maintain your delays */
-.delay-1 { animation-delay: 0.15s !important; }
-.delay-2 { animation-delay: 0.3s !important; }
-.delay-3 { animation-delay: 0.5s !important; }
-.delay-4 { animation-delay: 0.6s !important; }
-.delay-5 { animation-delay: 0.7s !important; }
 /* Mobile Fix */
 @media (max-width: 992px) {
-  .about-grid { grid-template-columns: 1fr; text-align: center; }
-  .about-stats, .about-top-label { justify-content: center; left: 0; width: 100%; }
+  .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: left; }
+  .about-stats { gap: 40px; }
+  .stat-number { font-size: 2.8rem; }
 }

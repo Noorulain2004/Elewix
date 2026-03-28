@@ -1,7 +1,7 @@
 /* src/Componets/Contactusform/Contact-Hero/ContactHero.css */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
 
-.contact-hero-container {
+.contact-hero-containers {
     background-color: #050505;
     min-height: 100vh;
     /* CHANGE: Padding adjust ki hai taake upar/neeche aur sides par munasib jagah ho */
@@ -32,7 +32,7 @@
     font-weight: 500;
 }
 
-.green-square {
+.greens-square {
     width: 8px;
     height: 8px;
     background-color: #ccff00;

@@ -32,7 +32,7 @@ const Hero = () => {
       </div>
 
       <div className="hero-meta">
-        <span className="copyright">© 2026</span>
+        <span className="copyright">© 2021</span>
         <p className="meta-text">
           Elewix is a Simple team uses aesthetic <br /> and minimal
         </p>

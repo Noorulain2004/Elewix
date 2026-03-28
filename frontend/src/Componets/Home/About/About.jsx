@@ -27,17 +27,17 @@ const About = () => {
         </div>
 
         <div className="about-grid">
-          {/* LEFT SIDE: TYPO ANIMATION */}
+          {/* LEFT SIDE */}
           <div className="about-left">
             <h2 className="about-heading">
-              <div className="typo-line">
-                <span>We are a <span className="highlight">Creative</span></span>
+              <div className="line-wrapper">
+                <span className="reveal-text">We are a <span className="highlight">Creative</span></span>
               </div>
-              <div className="typo-line">
-                <span className="delay-1">Digital Agency</span>
+              <div className="line-wrapper">
+                <span className="reveal-text delay-1">Digital Agency</span>
               </div>
-              <div className="typo-line">
-                <span className="delay-2">Based in UK.</span>
+              <div className="line-wrapper">
+                <span className="reveal-text delay-2">Based in UK.</span>
               </div>
             </h2>
           </div>
@@ -59,9 +59,13 @@ const About = () => {
                 <span className="stat-label">Projects Done</span>
               </div>
             </div>
-            <button className="about-btn fade-up delay-5">
-              Learn More <span className="btn-arrow">→</span>
-            </button>
+            
+            {/* PORTFOLIO LINK ADDED HERE */}
+            <a href="#portfolio" className="about-btn-link">
+              <button className="about-btn">
+                Learn More <span className="btn-arrow">→</span>
+              </button>
+            </a>
           </div>
         </div>
       </div>
