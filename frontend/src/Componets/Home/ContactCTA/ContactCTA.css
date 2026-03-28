@@ -20,8 +20,8 @@
     top: 50%;
     right: -10%; /* Screen ke right side par */
     transform: translateY(-50%);
-    width: 60vw; /* Screen ka 60% chora */
-    height: 60vw; /* Golai mein */
+    width: 40vw; /* Screen ka 60% chora */
+    height: 40vw; /* Golai mein */
     background: radial-gradient(
         circle,
         rgba(204, 255, 0, 0.3) 0%, /* Center mein Neon Green glow */
@@ -189,5 +189,112 @@
     
     .cta-title {
         font-size: 3rem; /* Mobile par font size normal */
+    }
+}
+/* --- 1. Main Section Cleanup --- */
+.cta-section {
+    background-color: #050505;
+    padding: 120px 0;
+    width: 100%;
+    overflow: hidden; 
+    position: relative;
+    font-family: 'Outfit', sans-serif; /* Matching your other sections */
+}
+
+/* --- 2. The Ring & Glow Container --- */
+.cta-visual {
+    flex: 1;
+    height: 700px; /* Increased height for better crop */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* YEH HAI WO GLOW JO IMAGE KE CHARON TARAF HOGA */
+.cta-visual::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60%; /* Positioned behind the ring's center */
+    transform: translate(-50%, -50%);
+    width: 500px; 
+    height: 500px;
+    background: radial-gradient(
+        circle,
+        rgba(204, 255, 0, 0.25) 0%, 
+        rgba(204, 255, 0, 0.05) 50%,
+        transparent 75%
+    );
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- 3. The Image "Crop" Fix --- */
+.visual-crop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-ring-img {
+    /* To get that exact "zoomed-in half ring" look */
+    width: 120%; 
+    max-width: none;
+    position: absolute;
+    
+    /* Pushing it to the right and slightly down/up to match the crop */
+    right: -10%; 
+    top: 50%;
+    transform: translateY(-50%) rotate(-10deg); /* Added slight rotation for style */
+    
+    object-fit: contain; 
+    /* Adding a subtle filter to make the image itself glow slightly */
+    filter: drop-shadow(0 0 30px rgba(204, 255, 0, 0.2));
+}
+
+/* --- 4. Content Visibility --- */
+.cta-container {
+    width: 90%;
+    max-width: 1300px; /* Slightly wider to match your Hero */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.cta-content {
+    flex: 1.2; /* Giving text more room */
+    z-index: 20;
+}
+
+.highlight-text {
+    color: #ccff00;
+    display: inline-block; /* Changed from block to let it flow naturally if needed */
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 968px) {
+    .cta-visual {
+        height: 300px;
+        display: block; /* Show on mobile but adjust */
+        margin-top: 40px;
+    }
+    
+    .cta-ring-img {
+        width: 100%;
+        right: -20%;
+        top: 0;
+        transform: none;
+    }
+
+    .cta-visual::before {
+        width: 300px;
+        height: 300px;
+        left: 80%;
     }
 }

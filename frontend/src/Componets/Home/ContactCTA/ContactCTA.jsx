@@ -2,7 +2,7 @@
 import React from 'react';
 import './ContactCTA.css';
 // Reusing the same ring image for consistency
-import ringImg from '../../../assets/Herosection.png'; 
+import ringImg from '../../../assets/herosections.png'; 
 
 const ContactCTA = () => {
   return (

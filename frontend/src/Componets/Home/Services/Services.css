@@ -1,171 +1,260 @@
-/* src/components/Services.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
 
 .services-section {
-    background-color: #050505;
-    padding: 100px 5%;
-    font-family: 'Outfit', sans-serif;
-    color: white;
-    overflow-x: hidden;
+  position: relative;
+  background-color: #050505;
+  padding: 100px 5%;
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+}
+.section-top-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Gradient makes it look like it's glowing in the center */
+  background: linear-gradient(90deg, transparent, #ccff00, transparent);
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.5);
+  z-index: 5;
 }
 
-.section-label {
-    color: #ccff00;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 60px;
-    opacity: 0.8;
-    text-transform: uppercase;
+.services-container {
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.ServicesGrid {
-    display: flex;
+.services-header {
+  display: flex;
+  justify-content: space-between; /* This pushes items to opposite ends */
+  align-items: flex-start; 
+  margin-bottom: 80px;
+  width: 100%; /* Ensure it takes full container width */
+}
+.header-left {
+  flex: 0 1 auto; /* Take only as much space as the label needs */
+}
+
+.header-right {
+  flex: 1; /* Take the remaining space */
+  text-align: right; /* Push the text inside this div to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Ensures the H2 itself aligns to the right edge */
+}
+
+.services-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: right; /* Keep the text lines right-aligned */
+  margin: 0;
+}
+.neon {
+  color: #ccff00;
+}
+
+/* LABEL STYLING */
+.services-label {
+  display: flex;
+  align-items: right;
+  gap: 12px;
+  color: #888;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.services-label .square {
+  width: 6px;
+  height: 6px;
+  background-color: #ccff00;
+}
+
+.services-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: right; /* Aligned to right like your image */
+}
+
+.services-title .neon {
+  color: #ccff00;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns on Desktop */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Individual Card */
+.service-card {
+  position: relative;
+  padding: 60px 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+.service-main-img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  
+  /* Initial state: slightly dull/grey */
+  filter: grayscale(1) brightness(0.7);
+  opacity: 0.5;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.9);
+}
+
+.service-card:hover .service-main-img {
+  filter: grayscale(0) brightness(1.2); /* Colors come back */
+  opacity: 1;
+  transform: scale(1.05); /* Subtle zoom in */
+}
+
+/* Adjusting the card padding to make room for the center image */
+.service-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service-name {
+  font-size: 1.8rem;
+  margin-top: auto; /* Pushes the name and tags to the bottom */
+}
+/* Ensure text stays readable over the image */
+.service-name, .service-tags, .card-top {
+  position: relative;
+  z-index: 2;
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.service-id {
+  color: #666;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-icon {
+  color: #444;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.service-name {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-tags {
+  color: #666;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.service-card:hover {
+  background: rgba(204, 255, 0, 0.02); /* Very subtle tint */
+}
+
+.service-card:hover .service-name {
+  color: #fff;
+}
+
+.service-card:hover .service-icon {
+  color: #ccff00;
+  transform: translate(5px, -5px);
+}
+
+.hover-glow {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(204, 255, 0, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-card:hover .hover-glow {
+  opacity: 1;
+}
+.service-img-wrapper {
+  width: 100%;
+  height: 180px; /* Fixed height so all cards look even */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; /* Space between image and Service Name */
+  overflow: hidden;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablet */
+  }
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  /* THIS PART FIXES THE 1 COLUMN CARDS */
+  .services-grid {
+    grid-template-columns: 1fr; /* Changes from 2 or 3 columns to 1 */
+    border-left: none;
+    border-right: none;
+  }
+
+  .service-card {
+    border-left: none;
+    border-right: none;
+    padding: 50px 20px; /* Adjust padding for smaller screens */
+  }
+
+  /* Header adjustments for mobile */
+  .services-header {
     flex-direction: column;
-    gap: 120px; /* Desktop gap */
-}
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
 
-/* --- THE ROW LAYOUT --- */
-.ServiceRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    min-height: 400px;
-}
-
-/* Alternate Layout (Zig-Zag) */
-.RowNormal {
-    flex-direction: row;
-}
-
-.RowReverse {
-    flex-direction: row-reverse; /* Text Right, Image Left */
-}
-
-/* --- TEXT CONTENT --- */
-.ServiceInfo {
-    flex: 1; /* Aadhi screen le */
-    max-width: 550px;
-}
-
-/* Step Indicator (Square + Text) */
-.StepIndicator {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.NeonSquare {
-    width: 8px;
-    height: 8px;
-    background-color: #ccff00;
-    box-shadow: 0 0 10px rgba(204, 255, 0, 0.5); /* Glow added */
-}
-
-.StepText {
-    color: #ccff00;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Main Title */
-.ServiceTitle {
-    font-size: clamp(2.5rem, 5vw, 4.5rem); 
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.TextHighlight {
-    color: #ccff00;
-    display: block; /* Desktop par nayi line */
-}
-
-/* Description */
-.ServiceDesc {
-    color: #999;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 90%;
-    font-weight: 300;
-}
-
-/* --- IMAGE STYLING --- */
-.ServiceImageWrapper {
-    flex: 1;
-    height: 450px; /* Fixed height consistency ke liye */
-    overflow: hidden;
-    border-radius: 6px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.ServiceImg {
+  .header-right {
+    text-align: left;
+    align-items: flex-start;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%); /* Pehle Black & White */
-    transition: transform 0.6s ease, filter 0.6s ease;
-}
+  }
 
-/* Hover Effect */
-.ServiceRow:hover .ServiceImg {
-    filter: grayscale(0%); /* Color wapis */
-    transform: scale(1.05);
-}
+  .services-title {
+    text-align: left;
+    font-size: 2.5rem; /* Makes title fit better on phone */
+  }
 
-/* ========================================= */
-/* --- MOBILE RESPONSIVENESS (Phone Fixes) --- */
-/* ========================================= */
+  .service-img-wrapper {
+    height: 140px;
+  }
 
-@media (max-width: 900px) {
-    
-    .services-section {
-        padding: 60px 5%; /* Padding kam ki */
-    }
-
-    .ServicesGrid {
-        gap: 80px; /* Rows ke beech gap kam kiya */
-    }
-
-    /* 1. Layout Reset: Hamesha Image Upar, Text Neeche */
-    .ServiceRow, 
-    .RowNormal, 
-    .RowReverse {
-        flex-direction: column-reverse !important; /* Force Image Top */
-        gap: 30px;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    /* 2. Image sizing for Mobile */
-    .ServiceImageWrapper {
-        width: 100%;
-        height: 280px; /* Height choti ki taake poori screen na khaye */
-    }
-
-    /* 3. Text Sizing */
-    .ServiceInfo {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .ServiceTitle {
-        font-size: 2.8rem; /* Font size adjust */
-    }
-
-    .TextHighlight {
-        display: inline; /* Mobile par same line mein rakha taake flow na toote */
-        margin-left: 8px;
-    }
-
-    .ServiceDesc {
-        max-width: 100%;
-        font-size: 1rem;
-    }
+  .service-name {
+    font-size: 1.6rem;
+  }
 }

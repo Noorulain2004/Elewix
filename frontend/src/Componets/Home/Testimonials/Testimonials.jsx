@@ -41,7 +41,6 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       
-      {/* Section Label */}
       <div className="container">
           <div className="section-header">
              <span className="green-square"></span>
@@ -49,11 +48,11 @@ const Testimonials = () => {
           </div>
       </div>
 
-      {/* Moving Track (Marquee) */}
+  
       <div className="marquee-wrapper">
         <div className="marquee-track">
           
-          {/* Loop 1: Original List */}
+          
           {testimonialsData.map((item) => (
             <div key={item.id} className="testimonial-card">
                <div className="card-top">
@@ -72,7 +71,6 @@ const Testimonials = () => {
             </div>
           ))}
 
-          {/* Loop 2: Duplicate List (For Seamless Effect) */}
           {testimonialsData.map((item) => (
             <div key={`dup-${item.id}`} className="testimonial-card">
                <div className="card-top">

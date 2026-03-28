@@ -1,0 +1,151 @@
+/* src/Componets/Contactusform/Contact-Hero/ContactHero.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
+
+.contact-hero-container {
+    background-color: #050505;
+    min-height: 100vh;
+    /* CHANGE: Padding adjust ki hai taake upar/neeche aur sides par munasib jagah ho */
+    padding: 120px 5% 100px; 
+    display: flex;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+.contact-wrapper {
+    width: 100%;
+   
+    max-width: 1220px; 
+    /* Optional: Agar aap chahein toh isay 900px ya 1200px bhi kar sakte hain */
+}
+
+/* --- HEADER --- */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 2px; /* Thoda aur spacing di */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.green-square {
+    width: 8px;
+    height: 8px;
+    background-color: #ccff00;
+}
+
+.contact-title {
+    /* Font size ko bari screens ke liye thoda adjust kiya */
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300; /* Thoda thin kiya modern look ke liye */
+    line-height: 1.1;
+    margin-bottom: 70px; /* Gap barhaya */
+    color: #fff;
+}
+
+.highlight-text {
+    color: #ccff00;
+}
+
+/* --- FORM FIELDS --- */
+.main-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Fields ke darmiyan gap barhaya taake khula dhula lage */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; /* Ensure karein ke yeh poori width le */
+}
+
+.form-group label {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* Input Styling (Underline Only) */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 12px 0; /* Padding thodi barhai */
+    font-size: 1.05rem;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    width: 100%; /* Yeh ensure karega ke input expand ho */
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Placeholder Color */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+    font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-bottom: 1px solid #ccff00;
+    padding-left: 10px; /* Thoda shift effect */
+}
+
+/* --- SELECT DROPDOWN CUSTOMIZATION --- */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+    color: #888;
+}
+/* Jab user select kar le toh color white ho jaye */
+.form-group select:valid {
+    color: #fff;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    font-size: 0.7rem;
+}
+
+/* --- SUBMIT BUTTON --- */
+.submit-btn {
+    margin-top: 40px;
+    width: 100%;
+    padding: 22px;
+    background-color: #ccff00;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #d4ff33; /* Thoda sa bright hover effect */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(204, 255, 0, 0.5);
+}

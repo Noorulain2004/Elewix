@@ -1,7 +1,7 @@
 // src/components/ContactHero.jsx
 import React from 'react';
 import './Contact-Hero.css';
-import heroRingImg from '../../../assets/Herosection.png'; 
+import heroRingImg from '../../../assets/Herosections.png'; 
 
 const Hero = () => {
   return (

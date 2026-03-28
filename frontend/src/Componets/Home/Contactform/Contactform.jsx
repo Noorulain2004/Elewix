@@ -4,7 +4,7 @@ import './Contactform.css';
 
 const ContactHero = () => {
   return (
-    <section className="contact-hero-container">
+    <section id="contact" className="contact-hero-container">
       <div className="contact-wrapper">
         
         
