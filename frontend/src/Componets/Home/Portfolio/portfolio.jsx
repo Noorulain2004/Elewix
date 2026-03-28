@@ -1,5 +1,5 @@
 import React from 'react';
-import './Portfolio.css';
+import './portfolio.css';
 
 // Import your images
 import webImg from '../../../assets/portfolio/web.png';
