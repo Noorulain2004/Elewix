@@ -111,7 +111,7 @@
   }
   
   .stats-section {
-    min-height: 100vh;
+    max-width: 100vw;
     padding: 80px 5%;
   }
 
@@ -121,10 +121,52 @@
 }
 
 @media (max-width: 600px) {
-  .stat-number {
-    font-size: 3.5rem;
+  .stats-section {
+    padding: 80px 20px; /* Sides par padding barha di taake text edge se na chipke */
+    width: 100%;
+    max-width: 86.8vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sab kuch center mein rakhega */
   }
-  .stats-bg {
-    background-attachment: scroll; /* Parallax is often disabled on small mobile screens */
+
+  .stats-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Content ko center align karega */
+    text-align: center;
+    gap: 50px; /* Boxes ke darmiyan gap */
+    margin: 0 auto;
+  }
+
+  .stats-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* "Happy Clients" aur "98+" dono ko center karega */
+  }
+ 
+
+  .stats-label {
+    justify-content: center; /* Icon aur text ko center mein rakhega */
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .stats-number {
+    /* Font size ko thoda aur control mein kiya */
+    font-size: clamp(3.5rem, 15vw, 5rem) !important; 
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+  }
+
+  .stats-top-label {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
