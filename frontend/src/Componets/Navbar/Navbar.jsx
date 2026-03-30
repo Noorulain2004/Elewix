@@ -8,13 +8,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar-container">
-      {/* Mobile Hamburger */}
+      {/* Mobile Menu / Back button */}
       <div className="mobile-menu-btn" onClick={toggleMenu}>
-        <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        {isMenuOpen ? (
+          <div className="back-btn">&larr; Back</div>
+        ) : (
+          <div className="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        )}
       </div>
 
       {/* Branding */}
@@ -30,6 +34,8 @@ const Navbar = () => {
         <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
         <a href="#services" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Services</a>
         <a href="#portfolio" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
+
+        {/* Footer only on mobile */}
         <div className="menu-footer">
           <p>EST. 2022</p>
           <div className="menu-socials">
@@ -38,12 +44,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Contact */}
-      <a href="#contact" className="nav-right-box">
-        <div className="contact-label">Contact Us</div>
-        <div className="arrow-box">&rarr;</div>
-      </a>
 
       {/* Overlay */}
       {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
