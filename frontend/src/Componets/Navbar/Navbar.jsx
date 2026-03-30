@@ -28,23 +28,22 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Center Links */}
       <div className={`nav-center-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-        <a href="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Home</a>
-        <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
-        <a href="#services" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Services</a>
-        <a href="#portfolio" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
+  <div className="nav-links-wrapper">
+    <a href="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Home</a>
+    <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
+    <a href="#services" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Services</a>
+    <a href="#portfolio" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
+  </div>
 
-        {/* Footer only on mobile */}
-        <div className="menu-footer">
-          <p>EST. 2022</p>
-          <div className="menu-socials">
-            <span>IG</span>
-            <span>LI</span>
-          </div>
-        </div>
-      </div>
-
+  <div className="menu-footer">
+    <p>EST. 2022</p>
+    <div className="menu-socials">
+      <span>IG</span>
+      <span>LI</span>
+    </div>
+  </div>
+</div>
       {/* Overlay */}
       {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
     </nav>

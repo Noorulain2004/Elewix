@@ -135,18 +135,8 @@
   transition: all 0.3s ease;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: flex;
-  }
 
-  /* Hide desktop contact box */
-  .nav-right-box {
-    display: none;
-  }
-
-  /* Mobile menu drawer */
   .nav-center-links {
     position: fixed;
     top: 0;
@@ -155,71 +145,42 @@
     max-width: 300px;
     height: 100vh;
     background-color: #050505;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between; /* space between links and footer */
     padding-top: 80px; /* space for back button & branding */
+    padding-bottom: 40px; /* extra space so footer is not stuck to bottom */
     gap: 20px;
     z-index: 1001;
-    overflow-y: auto;
     transition: left 0.4s cubic-bezier(0.16,1,0.3,1);
+    overflow: hidden; /* disable scroll on full drawer */
   }
 
-  /* Slide in when open */
+  /* Scrollable links container */
+  .nav-links-wrapper {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .nav-center-links.mobile-open {
     left: 0;
   }
 
-  /* Links bigger for touch */
-  .nav-link-item {
-    font-size: 1.5rem;
-    padding: 15px 20px;
-  }
-
-  /* Footer fixed at bottom */
   .menu-footer {
-    margin-top: auto;
-    padding: 20px;
+    padding: 30px 20px; /* more padding so footer looks spacious */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     font-size: 0.9rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     color: #ccc;
   }
 
-  .menu-socials {
-    display: flex;
-    gap: 15px;
-  }
-
-  .menu-socials span {
-    color: #ccff00;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .menu-socials span:hover {
-    color: #fff;
-  }
-
-  /* Overlay behind drawer */
-  .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    z-index: 1000;
-  }
-
-  /* Adjust navbar padding for narrow phones */
-  .navbar-container {
-    padding: 0 10px;
-  }
-
-  /* Branding size adjust */
-  .logo-text {
-    font-size: 1.2rem;
+  .nav-link-item {
+    font-size: 1.5rem;
+    padding: 15px 20px;
   }
 }
