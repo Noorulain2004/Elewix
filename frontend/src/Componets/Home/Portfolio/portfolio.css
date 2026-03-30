@@ -298,7 +298,7 @@
 
   /* Huge background text fix */
   .thoughtfully-bg-text {
-    font-size: 20vw; /* Scaled for mobile */
+    font-size: 18vw; /* Scaled for mobile */
     margin: 40px 0;
     width: 100%;
     overflow: hidden;

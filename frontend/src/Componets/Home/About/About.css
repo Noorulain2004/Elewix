@@ -173,7 +173,7 @@
 
   .about-grid {
     grid-template-columns: 1fr; /* Stacks Left and Right */
-    gap: 20px;
+    gap: 0px;
     text-align: left;
   }
 

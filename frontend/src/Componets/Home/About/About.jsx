@@ -111,12 +111,12 @@ const About = () => {
 
             <div className="about-stats">
               <div className="stat-item fade-up delay-3">
-                <span className="stats-number">5</span>
-                <span className="stat-label">Years Experience</span>
+                <span className="stats-number">5+</span>
+                <span className="stats-label">Years Experience</span>
               </div>
               <div className="stat-item fade-up delay-4">
-                <span className="stats-number">120</span>
-                <span className="stat-label">Projects Done</span>
+                <span className="stats-number">48+</span>
+                <span className="stats-label">Projects Done</span>
               </div>
             </div>
 

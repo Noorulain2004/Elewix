@@ -27,33 +27,53 @@ const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Intersection Observer for scroll reveal
+  // 1. Optimized Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Stop observing once it's visible to save resources
+          observer.unobserve(entry.target); 
+        }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 } // Lower threshold for faster mobile trigger
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // Parallax + hover scale for cards
+  // 2. Desktop-Only Parallax (Disabled on Mobile for performance)
   useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // If it's a phone/tablet, don't even attach the listeners
+    if (isTouchDevice) return;
+
     const cards = document.querySelectorAll(".service-card");
+    const handleMouseMove = (e, card) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      card.style.transform = `rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg) scale(1.02)`;
+    };
+
+    const handleMouseLeave = (card) => {
+      card.style.transform = "rotateY(0) rotateX(0) scale(1)";
+    };
+
     cards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        card.style.transform = `rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg) scale(1.02)`;
-      });
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "rotateY(0) rotateX(0) scale(1)";
-      });
+      card.addEventListener("mousemove", (e) => handleMouseMove(e, card));
+      card.addEventListener("mouseleave", () => handleMouseLeave(card));
     });
+
+    return () => {
+      cards.forEach((card) => {
+        card.removeEventListener("mousemove", handleMouseMove);
+        card.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
   }, []);
 
   return (
@@ -102,6 +122,38 @@ const Services = () => {
                 ))}
               </div>
 
+              <div className="hover-glow"></div>
+            </div>
+          ))}
+        </div>
+        <div className="services-grid">
+          {servicesData.map((service) => (
+            <div key={service.id} className="service-card fade-up">
+              <div className="card-top">
+                <span className="service-id">Service #{service.id}</span>
+                <span className="service-icon">↗</span>
+              </div>
+
+              <div className="service-img-wrapper">
+                <img 
+                  src={service.img} 
+                  alt={service.title} 
+                  className="service-main-img" 
+                  loading="lazy" // Improves initial load speed
+                  decoding="async" // Prevents decoding from blocking the UI thread
+                />
+              </div>
+
+              <h3 className="service-name">{service.title}</h3>
+
+              <div className="service-tags">
+                {service.tags.map((tag, i) => (
+                  <span key={i}>
+                    {tag}
+                    {i < service.tags.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </div>
               <div className="hover-glow"></div>
             </div>
           ))}
