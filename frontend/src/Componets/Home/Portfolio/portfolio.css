@@ -297,16 +297,20 @@
   .category-text { display: none; } 
 
  .thoughtfully-bg-text {
-    position: absolute;   /* so it can float over the section */
-    top: 50%;             /* center vertically */
-    left: 50%;            /* center horizontally */
-    transform: translate(-50%, -50%);
-    font-size: 12vw;      /* smaller for mobile screens */
-    white-space: nowrap;  
-    color: rgba(255,255,255,0.05);
-    z-index: 0;
-    pointer-events: none;
+    position: relative;    /* Change from absolute to relative */
+    display: block;
+    top: 0;                /* Remove the 50% top */
+    left: 0;               /* Remove the 50% left */
+    transform: none;       /* Remove the translate */
+    font-size: 14vw;       /* Slightly larger to be readable */
+    color: rgba(255, 255, 255, 0.05); /* Increase opacity slightly for mobile */
+    margin: 50px 0;        /* Add space above and below */
     text-align: center;
+    width: 100%;
+    z-index: 1;            /* Ensure it sits above the background but below cards */
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;      /* Prevents horizontal scroll if text is too wide */
   }
 }
 
