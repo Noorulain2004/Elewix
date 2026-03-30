@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar-container">
-      {/* 1. Mobile Hamburger */}
+      {/* Mobile Hamburger */}
       <div className="mobile-menu-btn" onClick={toggleMenu}>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
           <span></span>
@@ -17,14 +17,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* 2. Branding */}
+      {/* Branding */}
       <div className="nav-left-box">
         <a href="#home" className="logo-link">
           <span className="logo-text">Elewix</span>
         </a>
       </div>
 
-      {/* 3. Links */}
+      {/* Center Links */}
       <div className={`nav-center-links ${isMenuOpen ? 'mobile-open' : ''}`}>
         <a href="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Home</a>
         <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
@@ -39,13 +39,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* 4. Contact */}
+      {/* Contact */}
       <a href="#contact" className="nav-right-box">
         <div className="contact-label">Contact Us</div>
         <div className="arrow-box">&rarr;</div>
       </a>
 
-      {/* 5. Overlay */}
+      {/* Overlay */}
       {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
     </nav>
   );
