@@ -111,17 +111,17 @@ const About = () => {
 
             <div className="about-stats">
               <div className="stat-item fade-up delay-3">
-                <span className="stat-number">5</span>
+                <span className="stats-number">5</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-item fade-up delay-4">
-                <span className="stat-number">120</span>
+                <span className="stats-number">120</span>
                 <span className="stat-label">Projects Done</span>
               </div>
             </div>
 
             <a href="#portfolio" className="about-btn-link">
-              <button className="about-btn">
+              <button className="about-btns">
                 Learn More <span className="btn-arrow">→</span>
               </button>
             </a>

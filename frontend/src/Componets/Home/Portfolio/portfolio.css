@@ -248,13 +248,36 @@
 
 /* --- MOBILE & TABLET FIX --- */
 @media (max-width: 768px) {
+  .portfolio-overlay-content {
+    justify-content: center !important; /* Vertically center */
+    align-items: center !important;     /* Horizontally center */
+    text-align: center !important;
+    padding: 20px;
+    width: 100%;
+    left: 0;
+  }
   .portfolio-section {
     padding: 60px 0;
     width: 100%;
     max-width: 100vw; /* Screen se bahar jane se rokega */
     overflow: hidden;
   }
-
+  .project-title-center {
+    font-size: 1.6rem; /* Mobile size */
+    width: 100%;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .year-text {
+    font-size: 0.75rem;
+    display: block;
+    width: 100%;
+    opacity: 0.8;
+  }
+  .category-text {
+    display: none !important;
+  }
+  
   .portfolio-list, .portfolio-info-grid {
     width: 92%; /* Breathing room from edges */
     margin-left: auto;
@@ -263,7 +286,7 @@
   }
 
   .portfolio-img-wrapper { 
-    height: 350px; /* Mobile par height thodi kam */
+    height: 320px; /* Mobile par height thodi kam */
   }
 
   .project-title-center { 

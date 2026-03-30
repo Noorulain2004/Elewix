@@ -81,19 +81,19 @@
   margin-bottom: 50px;
 }
 
-.stat-number {
+.stats-number {
   font-size: 3.5rem;
   color: #fff;
 }
 
-.stat-label {
+.stats-label {
   font-size: 0.75rem;
   color: #666;
   text-transform: uppercase;
 }
 
 /* BUTTON */
-.about-btn {
+.about-btns {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
@@ -107,13 +107,13 @@
   overflow: hidden;
 }
 
-.about-btn:hover {
+.about-btns:hover {
   background: #ccff00;
   color: #000;
 }
 
 /* Glow hover */
-.about-btn::after {
+.about-btns::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -122,7 +122,7 @@
   transition: 0.3s;
 }
 
-.about-btn:hover::after {
+.about-btns:hover::after {
   opacity: 1;
 }
 
@@ -173,7 +173,7 @@
 
   .about-grid {
     grid-template-columns: 1fr; /* Stacks Left and Right */
-    gap: 40px;
+    gap: 20px;
     text-align: left;
   }
 
@@ -191,32 +191,51 @@
     max-width: 100%;
   }
 
-  /* Stats Alignment */
   .about-stats {
-    flex-direction: row; /* Keeping them side by side but smaller */
-    gap: 30px;
+    display: flex;
+    flex-direction: row; 
+    gap: 40px;
     margin-bottom: 40px;
-    width: 100%;
+    align-items: flex-start;
   }
 
-  .stat-number {
-    font-size: 2.2rem;
+  .stat-item {
+    display: flex;
+    flex-direction: column; /* Number upar, label neeche */
+    align-items: flex-start;
+  }
+
+  .stats-number {
+    font-size: 3.5rem !important; /* Number ko prominent rakhein */
+    line-height: 1;
     margin-bottom: 5px;
+    color: #fff;
   }
 
-  .stat-label {
-    font-size: 0.65rem;
+  .stats-label {
+    font-size: 0.7rem !important; /* Label ko thoda chota aur visible karein */
+    color: #888;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    display: block; /* Ensure separate line */
   }
+
 
   /* Button Adjustment */
-  .about-btn {
+  .about-btns {
     width: 100%; /* Mobile par full width button easier to click */
     padding: 16px 30px;
     font-size: 0.8rem;
     justify-content: center;
     display: flex;
+    text-decoration: none !important;
+  outline: none;
+
   }
+  .about-btn-link {
+  text-decoration: none !important; /* Purple underline hatane ke liye */
+  color: inherit;
+}
 }
 
 /* Extra small devices (iPhone SE etc.) */
