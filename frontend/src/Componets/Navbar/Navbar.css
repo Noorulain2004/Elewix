@@ -118,63 +118,128 @@
   .tagline, .divider { display: none; }
 }
 
+
+
+/* For slightly larger phones, show the "Contact Us" text */
+@media (min-width: 480px) and (max-width: 768px) {
+  /* --- MOBILE ONLY INTERACTIVE MENU --- */
 @media (max-width: 768px) {
-  .navbar-container {
-    height: 70px; /* Standard mobile height */
-    justify-content: space-between;
-  }
 
+  /* Hamburger shows */
   .mobile-menu-btn {
-    display: flex; /* Show menu button on phone */
+    display: flex; 
   }
 
-  .nav-left-box {
-    padding-left: 15px;
-    flex-grow: 1; /* Pushes contact box to the far right */
+  /* Hamburger animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
-  /* --- MOBILE DRAWER SETTINGS --- */
+  /* Mobile menu drawer */
   .nav-center-links {
     position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
+    top: 70px; /* under navbar */
+    left: -100%; /* hidden by default */
+    width: 80%;
+    max-width: 300px;
     height: calc(100vh - 70px);
     background-color: #050505;
     flex-direction: column;
-    justify-content: center;
-    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 999;
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 20px;
+    transition: 0.4s cubic-bezier(0.16,1,0.3,1);
+    z-index: 1000;
+    overflow-y: auto; /* scroll if too many links */
   }
 
+  /* Slide in when open */
   .nav-center-links.mobile-open {
     left: 0;
   }
 
+  /* Bigger clickable links */
   .nav-link-item {
-    font-size: 2rem; /* Bigger links on mobile */
-    padding: 20px;
+    font-size: 1.8rem;
+    padding: 15px 20px;
   }
 
-  /* --- CONTACT BOX MOBILE (KEEP ON RIGHT) --- */
+  /* Footer in drawer */
+  .menu-footer {
+    margin-top: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+
+  /* Overlay behind drawer */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+
+  /* Keep contact box visible on mobile */
   .nav-right-box {
-    margin-left: auto; /* Force it to the right edge */
+    margin-left: auto;
+    
   }
 
   .contact-label {
-    display: none; /* Hide text on very small phones to save space */
+    display: none; /* optional: hide text for very small screens */
   }
 
   .arrow-box {
-    width: 70px; /* Square button on phone */
+    width: 70px;
   }
+    .menu-footer {
+    margin-top: auto; /* sticks to bottom of menu */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .menu-footer p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .menu-socials {
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu-socials span {
+    font-size: 1rem;
+    color: #ccff00; /* neon highlight */
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .menu-socials span:hover {
+    color: #fff;
+  }
+  
 }
 
-/* For slightly larger phones, show the "Contact Us" text */
-@media (min-width: 480px) and (max-width: 768px) {
-  .contact-label {
-    display: flex;
-    padding: 0 20px;
-    font-size: 0.8rem;
-  }
 }

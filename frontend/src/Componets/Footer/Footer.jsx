@@ -46,12 +46,7 @@ const Footer = () => {
           </div>
 
           <div className="footer-bottom-right">
-            <div className="footer-nav">
-              <a href="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Home</a>
-        <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
-        <a href="#services" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Services</a>
-        <a href="#portfolio" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
-            </div>
+            
             
             <div className="back-to-top" onClick={scrollToTop}>
               <span>Back to top</span>

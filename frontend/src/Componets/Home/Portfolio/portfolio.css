@@ -296,13 +296,17 @@
 
   .category-text { display: none; } 
 
-  /* Huge background text fix */
-  .thoughtfully-bg-text {
-    font-size: 18vw; /* Scaled for mobile */
-    margin: 40px 0;
-    width: 100%;
-    overflow: hidden;
-    display: block;
+ .thoughtfully-bg-text {
+    position: absolute;   /* so it can float over the section */
+    top: 50%;             /* center vertically */
+    left: 50%;            /* center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 12vw;      /* smaller for mobile screens */
+    white-space: nowrap;  
+    color: rgba(255,255,255,0.05);
+    z-index: 0;
+    pointer-events: none;
+    text-align: center;
   }
 }
 
