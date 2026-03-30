@@ -5,10 +5,19 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const menuItems = [
+    { label: "Home", link: "#home" },
+    { label: "About", link: "#about" },
+    { label: "Services", link: "#services" },
+    { label: "Portfolio", link: "#portfolio" },
+    { label: "Contact", link: "#contact" },
+  ];
 
   return (
     <nav className="navbar-container">
-      {/* 1. Mobile Hamburger */}
+      {/* Hamburger */}
       <div className="mobile-menu-btn" onClick={toggleMenu}>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
           <span></span>
@@ -16,24 +25,28 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* 2. Left Branding */}
+      {/* Left Branding */}
       <div className="nav-left-box">
-        <a href="#home" className="logo-link">
+        <a href="#home" className="logo-link" onClick={closeMenu}>
           <span className="logo-text">Elewix</span>
         </a>
         <span className="divider">|</span>
         <span className="tagline">based in UK</span>
       </div>
 
-      {/* 3. Center Links (Scrolling to IDs) */}
+      {/* Side Menu Drawer */}
       <div className={`nav-center-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-        <a href="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Home</a>
-        <a href="#about" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>About</a>
-        <a href="#services" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Services</a>
-        <a href="#portfolio" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
+        <ul className="menu-list">
+          {menuItems.map((item, idx) => (
+            <li key={idx} className="menu-item" onClick={closeMenu}>
+              <a href={item.link}>{item.label}</a>
+              <span className="menu-line"></span>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* 4. Right Contact Box */}
+      {/* Right Contact Box */}
       <a href="#contact" className="nav-right-box">
         <div className="contact-label">Contact Us</div>
         <div className="arrow-box">&rarr;</div>

@@ -246,19 +246,62 @@
   color: #ccff00;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .portfolio-info-grid { grid-template-columns: 1fr 1fr; }
+/* --- MOBILE & TABLET FIX --- */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 60px 0;
+    width: 100%;
+    max-width: 100vw; /* Screen se bahar jane se rokega */
+    overflow: hidden;
+  }
+
+  .portfolio-list, .portfolio-info-grid {
+    width: 92%; /* Breathing room from edges */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .portfolio-img-wrapper { 
+    height: 350px; /* Mobile par height thodi kam */
+  }
+
+  .project-title-center { 
+    font-size: 1.5rem; 
+    text-align: center;
+  }
+
+  .category-text { display: none; } 
+
+  /* Huge background text fix */
+  .thoughtfully-bg-text {
+    font-size: 20vw; /* Scaled for mobile */
+    margin: 40px 0;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
 }
 
 @media (max-width: 600px) {
-  .portfolio-info-grid { grid-template-columns: 1fr; }
-  .info-card { height: 350px; }
-}
+  .portfolio-info-grid {
+    grid-template-columns: 1fr; /* 1 Column stack */
+    gap: 15px;
+    padding: 0 10px;
+  }
 
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-  .portfolio-img-wrapper { height: 400px; }
-  .project-title-center { font-size: 1.5rem; }
-  .category-text { display: none; } /* Hide the small left label on mobile for space */
+  .info-card {
+    height: 320px;
+    width: 100%;
+  }
+
+  /* Text inside overlay center align for phone */
+  .portfolio-overlay-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .portfolio-title-simple {
+      font-size: 2.2rem;
+  }
 }
